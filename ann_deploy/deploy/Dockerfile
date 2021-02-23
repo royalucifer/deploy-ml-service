@@ -1,4 +1,4 @@
-FROM gcr.io/ddd-model-gap/recsys/ann-index-base:latest
+FROM gcr.io/PROJECT_NAME/ann-index-base:latest
 
 # Copy the annoy index.
 COPY AnnSearch /opt/workdir/AnnSearch
