@@ -3,21 +3,21 @@ steps:
   - name: 'gcr.io/cloud-builders/gsutil'
     args: [ '-m', 'cp', '-r', '${_EXPORT_BUCKET}', '.' ]
   - name: 'gcr.io/cloud-builders/docker'
-    args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/recsys/ann-index-deploy', '.', '-f', 'Dockerfile' ]
+    args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/ann-index-deploy', '.', '-f', 'Dockerfile' ]
   # push the container image to Container Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/recsys/ann-index-deploy']
+    args: ['push', 'gcr.io/$PROJECT_ID/ann-index-deploy']
   - name: 'gcr.io/cloud-builders/gcloud'
     args:
       - 'run'
       - 'deploy'
       - 'get-similar-news'
-      - '--image=gcr.io/$PROJECT_ID/recsys/ann-index-deploy:latest'
+      - '--image=gcr.io/$PROJECT_ID/ann-index-deploy:latest'
       - '--region=asia-east1'
       - '--memory=2Gi'
       - '--platform=managed'
       - '--allow-unauthenticated'
 images:
-  - 'gcr.io/$PROJECT_ID/recsys/ann-index-deploy'
+  - 'gcr.io/$PROJECT_ID/ann-index-deploy'
 substitutions:
-    _EXPORT_BUCKET: gs://udn-news-recserve-asia/AnnSearch
+    _EXPORT_BUCKET: gs://BUCKET_NAME/AnnSearch
