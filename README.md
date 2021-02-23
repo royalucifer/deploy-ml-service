@@ -10,10 +10,7 @@
     
     2. Locate the row with the Cloud Run Admin role and set its Status to ENABLED.
 
-### 讓 Cloud Build 服務帳戶可間接取用 Cloud Run runtime (comput engine) 服務帳戶可取用的資源
-
-授予其 Service Account User 的角色，使 cloud build 帳戶可模擬成 compute engine 帳戶
-
+### 讓 Cloud Build 服務帳戶可間接取用 Cloud Run runtime 服務帳戶可取用的資源
     1. Go to the Service Accounts page
 
     2. select [PROJECT_NUMBER]-compute@developer.gserviceaccount.com. This is the Cloud Run runtime service account.
