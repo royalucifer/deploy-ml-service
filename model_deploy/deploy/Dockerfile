@@ -1,4 +1,4 @@
-FROM gcr.io/ddd-model-gap/recsys/tf-serving-base
+FROM gcr.io/PROJECT_NAME/tf-serving-base
 
 # Copy the exporter models. Directory pattern should be /<model>/<version>
 # Only the latest version is run by the tensorflow serving
