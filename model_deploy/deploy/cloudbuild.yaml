@@ -21,4 +21,4 @@ steps:
 images:
   - 'gcr.io/$PROJECT_ID/recsys/tf-predict'
 substitutions:
-    _EXPORT_BUCKET: gs://udn-news-recserve/PredictData/test/vae/model
+    _EXPORT_BUCKET: gs://bucket/model-directory
